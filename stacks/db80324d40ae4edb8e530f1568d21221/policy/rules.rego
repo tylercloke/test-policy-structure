@@ -15,6 +15,40 @@ monitor[decision] {
   }
 }
 
+monitor[decision] {
+  parameters := {
+    "resource_attributes": {},
+    "user_attributes": {}
+  }
+
+  data.global.systemtypes["entitlements:1.0"].library.policy.abac.v1.user_and_resource_has_attributes_glob[message]
+    with data.library.parameters as parameters
+
+  decision := {
+    "allowed": true,
+    "entz": set(),
+    "message": message
+  }
+}
+
+
+
+
+monitor[decision] {
+  parameters := {
+    "attributes": {}
+  }
+
+  data.global.systemtypes["entitlements:1.0"].library.policy.abac.v1.resource_has_attributes_glob[message]
+    with data.library.parameters as parameters
+
+  decision := {
+    "allowed": true,
+    "entz": set(),
+    "message": message
+  }
+}
+
 # By default, stacks do no allow or deny a request.
 #
 # Rules that allow a request should be of the form:
