@@ -1,4 +1,4 @@
-package global.anothertest/pathing.policy
+package global.anothertest.pathing.policy
 
 monitor[decision] {
   parameters := {
