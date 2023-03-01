@@ -1,3 +1,3 @@
 package libraries.newlib.test.path
 
-pi := 3.1415931
+pi := 3.14159312
